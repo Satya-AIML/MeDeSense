@@ -7,7 +7,7 @@ __version__ = "0.0.0"
 
 REPO_NAME = "MeDeSense"
 AUTHOR_USER_NAME = "Satyapriya4u"
-SRC_REPO = "mdc-flask-app"
+SRC_REPO = "mdc_flask_app"
 AUTHOR_EMAIL = "satyapriyas4u@gmail.com"
 
 

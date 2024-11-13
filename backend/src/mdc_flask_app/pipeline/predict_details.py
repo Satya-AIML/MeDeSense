@@ -1,12 +1,13 @@
 import json
 import httpx
+from fastapi import HTTPException
 
 
 # Define the class definitions
 class_definitions = {
     "Class A": "Low Risk. Simple, non-invasive.",
     "Class B": "Low to Moderate Risk. Limited duration, minimal invasiveness, and with additional regulatory controls",
-    "Class C": "Moderate to High Risk. Invasive, prolonged contact, and devices needing premarket approval",
+    "Class C": "Moderate to High Risk. Invasive, prolonged contact, and devices needing pre-market approval",
     "Class D": "High Risk. Implantable, life-sustaining, and devices needing strict regulatory controls."
 }
 
@@ -25,6 +26,7 @@ def create_prompt(device_name, intended_use, device_class, class_definitions):
     )
     return prompt
 
+
 async def generate_response(device_name, intended_use, device_class):
     """Send a prompt to the API and get the generated response."""
     # Generate the prompt
@@ -36,9 +38,17 @@ async def generate_response(device_name, intended_use, device_class):
         "prompt": prompt
     }
     
-    # Send the asynchronous request
-    async with httpx.AsyncClient() as client:
-        response = await client.post(url, json=payload, timeout=None)
+    try:
+        # Send the asynchronous request
+        async with httpx.AsyncClient() as client:
+            response = await client.post(url, json=payload, timeout=None)
+        response.raise_for_status()  # Raise exception for non-2xx status codes
+    except httpx.HTTPStatusError as e:
+        # Handle HTTP errors with a specific exception message
+        raise HTTPException(status_code=e.status_code, detail=f"API request failed with status {e.status_code}")
+    except Exception as e:
+        # Catch other unexpected errors
+        raise HTTPException(status_code=500, detail=f"Internal error: {str(e)}")
     
     # Process the response
     response_text = ""

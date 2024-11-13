@@ -1,54 +1,62 @@
-import pandas as pd
-from flask import Flask, jsonify, request
-from flask_cors import CORS
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from mdc_flask_app.pipeline.prediction import call_api
 
-app = Flask(__name__)
-CORS(app)  # This enables CORS for all routes
+app = FastAPI()
 
-@app.route('/')
-def home():
-    return jsonify({
-        'message': 'Hello from Flask!'
-    })
+# Define CORS settings to allow your React frontend to communicate with FastAPI
+origins = [
+    "http://localhost:3000",  # React frontend URL (default for React dev server)
+    "http://127.0.0.1:3000",  # Alternative URL in case localhost doesn't work
+    # Add other allowed origins if needed
+]
 
-@app.route('/predict', methods=['POST'])
-def prediction():
-    data = request.get_json()
+# Add CORS middleware to FastAPI
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # Specify allowed origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allow all headers
+)
+
+class PredictionRequest(BaseModel):
+    device: str
+    description: str
+
+
+@app.get("/")
+async def home():
+    return {"message": "Hello from the FastAPI app!"}
+
+@app.post("/predict")
+async def predict(request: PredictionRequest):
+    # Call the external API asynchronously
+    api_response = await call_api(request)
     
-    # Access the nested 'data' dictionary
-    device_data = data.get('data', {})
-    device = device_data.get('device')
-    description = device_data.get('description')
+    return {
+        "device": request.device,
+        "description": request.description,
+        "api_response": api_response['predicted_class']
+    }
 
-    return jsonify({
-        'message': f'Hello from Flask! Received device: {device} and description: {description}'
-    })
+@app.get("/data")
+async def get_data():
+    sample_data = [
+        {'id': 1, 'name': 'Device A', 'class': 'A'},
+        {'id': 2, 'name': 'Device B', 'class': 'B'},
+        {'id': 3, 'name': 'Device C', 'class': 'C'}
+    ]
+    return sample_data
 
-@app.route('/class_reason', methods=['POST'])
-def class_reason():
+@app.post("/class_reason")
+async def class_reason():
     deviceClass = "Class A"
     reason = "Reason 1"
+    return {"message": f"Device is {deviceClass} because it is {reason}"}
 
-    return jsonify({
-        'message': f'Hello from Flask! Device is {deviceClass} because it is {reason}'
-    })
-
-@app.route('/data', methods=['POST'])
-def get_data():
-    # Sample DataFrame
-    data = {
-        'id': [1, 2, 3],
-        'name': ['Device A', 'Device B', 'Device C'],
-        'class': ['A', 'B', 'C']
-    }
-    df = pd.DataFrame(data)
-    
-    # Convert DataFrame to JSON
-    json_data = df.to_dict(orient='records')  # List of dictionaries
-    
-    # Return JSON response
-    return jsonify(json_data)
-
-
-if __name__ == '__main__':
-    app.run(host="0.0.0.0", port= 8000, debug=True)
+if __name__ == "__main__":
+    # To run this app with Uvicorn, you don't need this part, but it’s here for local testing.
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -3,4 +3,7 @@ Flask-CORS
 pandas
 numpy
 httpx
+requests
+uvicorn
+fastapi
 -e .

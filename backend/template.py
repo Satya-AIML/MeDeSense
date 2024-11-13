@@ -4,7 +4,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 
-project_name = "mdc-flask-app"
+project_name = "mdc_flask_app"
 
 logging.info(f"Creating project directory: {project_name}")
 

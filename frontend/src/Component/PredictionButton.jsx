@@ -17,26 +17,28 @@ const PredictionButton = ({ deviceData }) => {
     else {
         console.log('Submitting API for prediction:');
     try {
-      const response = await axios.post('http://10.11.6.51:4001/predict', {
-        data: {
-          device: deviceData.device,
-          description: deviceData.description,
-        }
+      const response = await axios.post('http://localhost:8000/predict', {
+        device: deviceData.device,
+        description: deviceData.description,
       });
-      const predictionMessage = response.data.message;
-      console.log(`Successfully submitted with response: ${predictionMessage}`);
+      // Access the fields directly from the response
+      const { device, description, api_response } = response.data;
+      
+      // Use the extracted data as needed
+      console.log(device, description, api_response);
+      // console.log(`Successfully submitted with response: ${predictionMessage}`);
 
       // Navigate to the Result page with prediction data
       navigate('/result', { 
         state: { 
           device: deviceData.device,
           description: deviceData.description,
-          prediction: predictionMessage 
+          prediction: api_response 
         } 
       });      
 
     } catch (error) {
-      console.error('Error fetching prediction:');
+      console.error('Error during API request:', error);
     }
 
     }
