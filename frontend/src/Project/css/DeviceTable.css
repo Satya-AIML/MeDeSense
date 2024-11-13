@@ -1,0 +1,87 @@
+/* src/components/DeviceTable.css */
+
+.device-table {
+    width: 70%;
+    margin: 30px auto; /* Center the table */
+    border-collapse: collapse;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    table-layout: fixed;
+}
+  
+.device-table th,
+.device-table td {
+    padding: 15px 15px;
+    text-align: left;
+    border: none;
+    white-space: nowrap; /* Prevent text wrap */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    height: auto;
+    max-height: 40px; 
+}
+ 
+.device-table th {
+    background-color: #8affff2b;
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: #1f1f1f;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.device-table td {
+    background-color: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #dddddd;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Set fixed widths for each column */
+.device-table th:first-child, 
+.device-table td:first-child {
+    border-top-left-radius: 15px;
+    width: 22%; /* Adjust as needed */
+}
+
+.device-table th:nth-child(2), 
+.device-table td:nth-child(2) {
+  width: 55%; /* Adjust as needed */
+}
+
+.device-table th:nth-child(3), 
+.device-table td:nth-child(3) {
+    border-top-right-radius: 15px; /* Adjust as needed */
+}
+
+
+.actions {
+    display: flex;
+    align-items: center; /* Center icons vertically */
+    justify-content: center; /* Center icons horizontally */
+    gap: 15px;
+}
+  
+.icon {
+    cursor: pointer;
+    font-size: 2rem;
+    transition: transform 0.2s, color 0.2s;
+}
+  
+.edit-icon {
+    color: #002bd9;
+}
+  
+.delete-icon {
+    color: #e11700;
+}
+  
+.icon:hover {
+    transform: scale(1.2); /* Slightly enlarge on hover */
+    opacity: 0.9;
+}
+  
+  

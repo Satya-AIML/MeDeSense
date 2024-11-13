@@ -1,0 +1,71 @@
+ .container {
+    display: flex;
+    flex-direction: row;             /* Arrange left and right containers horizontally */
+    justify-content: space-between;  /* Ensure space between left and right containers */
+    align-items: flex-start;         /* Align containers to the top */
+    gap: 10px;                       /* Space between containers */
+    padding: 20px;                   /* Padding around the entire container */
+    margin: 10px auto;                  /* Center the container on the page */
+}
+
+/* Left container styling */
+.left-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;     /* Align the content to the top */
+    align-items: center;
+    padding-right: 10px;             /* Add padding to the right for spacing */
+}
+
+/* Right container styling */
+.right-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+/* Flowchart image adjustments */
+.description-container {
+  
+    margin-top: 10px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 10px 100px;
+}
+
+/* src/Project/ProjectDetails.css */
+
+.title-text {
+    font-size: 2.5rem;
+    color: #3498db;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 8px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1.2px;
+    text-transform: none;
+}
+
+.project-details {
+    font-size: 1.75rem;
+    color: #ecf0f1;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.1;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+
+/* Styling for the project details text */
+.project-details-text {
+    font-size: 1.1rem;               /* Adjust the font size for readability */
+    line-height: 1.5;                /* Increase line spacing for better readability */
+    margin: 10px 100px;
+}

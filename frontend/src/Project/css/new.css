@@ -1,0 +1,215 @@
+
+  
+  /* Container to position the logos and line */
+.top-right-logo-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center; /* Vertically align logos and the line */
+    gap: 10px; /* Space between logos and line */
+}
+  
+  /* Top-right corner positioning for the first logo */
+.top-right-logo-project-SV {
+    width: auto; /* Adjust size as needed */
+    height: 80px;
+}
+  
+  /* Line between the logos */
+.line-between-logos {
+    width: 2px; /* Thickness of the line */
+    height: 80px; /* Adjust height of the line */
+    background-color: rgb(28, 151, 172); /* Color of the line */
+}
+  
+  /* Top-right corner positioning for the second logo */
+.top-right-logo-project-merai {
+    width: auto; /* Adjust size as needed */
+    height: 80px;
+}
+
+.project-title {
+  font-size: 2.25rem;                   /* Adjust the font size */
+  font-weight: 700;                 /* Make the text bold */
+  color: #aaaaaa;                       /* Dark gray color for better readability */
+  margin: 20px 0;                   /* Space above and below the title */
+  text-align: center;                /* Center the title */
+  text-transform: uppercase;         /* Transform text to uppercase for emphasis */
+  letter-spacing: 1px;               /* Add spacing between letters */
+  border-bottom: 2px solid #0b96a2; /* Add a bottom border for emphasis */
+  padding-bottom: 10px;              /* Space between text and border */
+  font-family: 'Arial', sans-serif;  /* Use a clean, sans-serif font */
+  transition: color 0.3s;            /* Smooth transition for color change on hover */
+}
+
+.project-title:hover {
+  color: #0b96a2;                    /* Change color on hover */
+}
+
+
+.description-container {
+  
+  margin-top: 10px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 10px 100px;
+}
+
+  
+/* Overall container layout */
+.container {
+  display: flex;
+  padding: 50px;
+  align-items: center;
+  justify-content: flex-end;         
+}
+
+/* Left container styling */
+.left-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+                 
+}
+
+.right-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+}
+
+  
+/* For dynamic width on larger content */
+.right-container.expanded {
+    width: auto;                     /* Let the container expand based on content */
+    flex-grow: 2;                    /* Allow more flexible width based on content */
+}
+
+/* ProjectPage.css or your relevant CSS file */
+.details-button {
+  background-color: #1a79ac; 
+  color: white;              /* Text color */
+  border: none;              /* Remove default border */
+  border-radius: 18px;       /* Rounded corners */
+  padding: 15px 25px;       /* Padding for button size */
+  font-size: 1.02rem;          /* Font size */
+  cursor: pointer;           /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+  margin-top: 10px;         /* Margin for spacing */
+  text-align: center;        /* Centered text */
+  font-weight: 900;
+}
+
+/* Hover effect */
+.details-button:hover {
+  background-color: #af7b01; /* Darker background on hover */
+}
+
+/* Focus effect */
+.details-button:focus {
+  outline: none;             /* Remove outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add shadow on focus */
+}
+
+
+.fancy-start {
+    font-size: 28px; /* Increase the font size */
+    font-weight: bold; /* Make it bold */
+    text-align: center; /* Center the text */
+    color: #fff; /* Set text color to white */
+    padding: 20px 80px; /* Add padding around the text */
+    background: linear-gradient(120deg, #054648, #21888c); /* Gradient background */
+    border-radius: 35px; /* Rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add box shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    cursor: pointer; /* Change cursor on hover */
+    display: inline-block; /* Make it inline and allow padding */
+    }
+
+.fancy-start:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+    }
+
+
+/* Updated button section styling */
+.button_section {
+    margin: 2px 0;                     /* Adjust margin for spacing */
+    display: flex;
+    justify-content: center;             /* Center the buttons */
+    align-items: center;                 /* Center content vertically */
+    gap: 40px;                           /* Increased space between buttons */
+    padding: 5px 0;                     /* Add padding around button area */
+    }
+
+.button_section {
+    margin: 40px 0;                     /* Adjust margin for spacing */
+    display: flex;                       /* Use flexbox for layout */
+    justify-content: center;             /* Center the buttons */
+    align-items: center;                 /* Center content vertically */
+    gap: 30px;                           /* Increased space between buttons */
+    padding: 10px 0;                     /* Add padding around button area */
+    }
+
+/* Updated switch_input styling */
+.switch_input {
+    position: relative;
+    display: flex;                       /* Use flexbox for alignment */
+    align-items: center;                 /* Center content vertically */
+    justify-content: flex-start;         /* Align items to the left */
+    border: none;                        /* Remove the border for cleaner look */
+    text-align: left;                    /* Align text to the left */
+    height: 45px;                        /* Slightly taller height */
+    width: 180px;                        /* Wider width */
+    font-size: 16px;                     /* Adjust font size */
+    font-weight: 500;                    /* Medium font weight */
+    padding: 5px 10px;                  /* Adjust padding */
+    cursor: pointer;
+    background: linear-gradient(120deg, #2c7a7c, #21888c); /* Gradient background */
+    color: #000000;                      /* Text color */
+    border-radius: 8px;                  /* Slightly rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Subtle box shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth transitions */
+    }
+
+.switch_input:hover {
+    transform: translateY(-5px);         /* Lift effect on hover */
+    background: linear-gradient(120deg, #b37c4f, #ca6410); /* Darken gradient on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+    }
+
+.switch_input:active {
+    transform: translateY(1px);          /* Pressed effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Reduced shadow on press */
+    }
+
+/* Image styling */
+.switch_input_img {
+    height: 45px;                        /* Adjust height as needed to crop image */
+    width: auto;
+    margin-left: 20px;                         /* Maintain aspect ratio */
+    margin-right: 10px;                 /* Space between image and text */
+    vertical-align: middle;              /* Ensure vertical alignment */
+    }
+
+.switch_input_text {
+    display: inline-block;               /* Ensure proper text alignment */
+    vertical-align: middle;              /* Center text vertically */
+    }
+
+.fade-in {
+    opacity: 0;                             /* Start fully transparent */
+    transform: translateY(-20px);          /* Start slightly above */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+    }
+
+/* Add a class to trigger the animation when shown */
+.button_section.show {
+    opacity: 1;                             /* Fully opaque */
+    transform: translateY(0);               /* Move to original position */
+    }

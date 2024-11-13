@@ -1,0 +1,29 @@
+/* Container to position the logos and line */
+.top-right-logo-container {
+    position: absolute;
+    top: 4.5px; /* Reduced by 10% */
+    right: 9px; /* Reduced by 10% */
+    height: 90px; /* Reduced by 10% */
+    display: flex;
+    align-items: center; /* Vertically align logos and the line */
+    gap: 9px; /* Reduced by 10% */
+}
+
+/* Top-right corner positioning for the first logo */
+.top-right-logo-project-SV {
+    width: auto; /* Adjust size as needed */
+    height: 72px; /* Reduced by 10% */
+}
+
+/* Line between the logos */
+.line-between-logos {
+    width: 1.8px; /* Reduced by 10% */
+    height: 72px; /* Reduced by 10% */
+    background-color: rgb(28, 151, 172); /* Color of the line */
+}
+
+/* Top-right corner positioning for the second logo */
+.top-right-logo-project-merai {
+    width: auto; /* Adjust size as needed */
+    height: 72px; /* Reduced by 10% */
+}

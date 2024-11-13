@@ -1,0 +1,76 @@
+/* Image styling */
+
+.project-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;                    /* Maintain aspect ratio */
+    margin-top: 1px;            
+    display: center;                  /* Center if needed */
+}
+
+
+.project-title {
+    font-size: 2rem;                   /* Adjust the font size */
+    font-weight: bold;                 /* Make the text bold */
+    color: #b0b0b0;                       /* Dark gray color for better readability */
+    margin: 10px 0;                   /* Space above and below the title */
+    text-align: center;                /* Center the title */
+    text-transform: none;         /* Transform text to uppercase for emphasis */
+    letter-spacing: 1px;               /* Add spacing between letters */
+    border-bottom: 2px solid #00ffff; /* Add a bottom border for emphasis */
+    padding-bottom: 10px;              /* Space between text and border */
+    font-family: 'Arial', sans-serif;  /* Use a clean, sans-serif font */
+    transition: color 0.3s;            /* Smooth transition for color change on hover */
+}
+
+.project-title:hover {
+    color: #00ffff;                    /* Change color on hover */
+}
+
+
+/* Container for the description text */
+.description-container {
+    font-size: 1.5rem;                 /* Text size for description */
+    line-height: 1.5;                /* Line height for readability */
+    color: #ffffff;                     /* Slightly lighter text color */
+}
+
+.text-container {
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 1.5;                
+    color: #ffffff;                     
+    padding: 10px 20px;                          
+}
+
+/* Button container to center the button */
+.button-container {
+    display: flex;                   /* Flexbox for alignment */
+    justify-content: center;         /* Center align button */
+    margin-top: 20px;                /* Space above the button */
+}
+
+/* Button styling */
+.details-button {
+    background-color: #2c8fb0;       /* Button background color */
+    color: #fff;                     /* Text color */
+    border: none;                    /* Remove default border */
+    padding: 10px 20px;              /* Button padding */
+    font-size: 16px;                 /* Font size */
+    font-weight: 600;                /* Slightly bolder text */
+    border-radius: 15px;              /* Rounded button corners */
+    cursor: pointer;                 /* Cursor on hover */
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+.details-button:hover {
+    background-color: #af7b01;       /* Darken on hover */
+    transform: translateY(-3px);     /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Focus effect */
+.details-button:focus {
+    outline: none;             /* Remove outline */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Add shadow on focus */
+  }

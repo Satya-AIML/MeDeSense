@@ -1,0 +1,59 @@
+/* src/components/Project.css */
+
+.background-container {
+  background-image: 
+    linear-gradient(145deg, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 80%),
+    url('../../Image/MDC.webp');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  width: 100%;
+  filter: brightness(0.9);               /* Slightly darkens the image for better text contrast */
+  position: relative;                     /* Required for positioning pseudo-elements */
+  overflow: hidden;                       /* Hide any overflow for pseudo-elements */
+}
+
+/* Optional: Adding an overlay */
+.background-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+  z-index: 1; /* Ensure it's behind the navbar */
+}
+
+/* Optional: Adding a subtle texture */
+.background-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../../Image/45-degree-fabric-dark.png');
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 1; /* Ensure it's behind the navbar */
+}
+
+
+.all-description {
+  position: fixed;
+  top: 60px; /* Adjust this based on the height of .fixed-header */
+  left: 0;
+  width: 100%;
+  padding: 0px;
+}
+
+.start-here-section {
+  position: relative;
+  width: 100%;
+  padding-top: 5px;
+  margin-top: 430px;
+  height: calc(100vh - 440px);
+  overflow-y: auto;
+}

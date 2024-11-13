@@ -1,0 +1,27 @@
+.App-button {
+    background: linear-gradient(135deg, #9ee4ea, #007b7f); /* Gradient background */
+    border: none;                        /* No border */
+    color: #000000;                       /* White text */
+    padding: 20px 40px;                  /* Increased padding for better size */
+    text-align: center;                  /* Center text */
+    text-decoration: none;               /* No underline */
+    display: inline-block;               /* Inline-block for proper spacing */
+    font-size: 25px;                     /* Slightly larger font size */
+    margin: 8px 4px;                     /* Adjusted margin for spacing */
+    cursor: pointer;                     /* Pointer cursor on hover */
+    border-radius: 15px;                  /* Slightly rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
+}
+
+.App-button:hover {
+    background: linear-gradient(135deg, #00a8e8, #3d007f); /* Darker gradient on hover */
+    color: #fff;                         /* Keep text color white */
+    transform: translateY(-3px);         /* Lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.App-button:active {
+    transform: translateY(1px);          /* Pressed effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Reduced shadow on press */
+}

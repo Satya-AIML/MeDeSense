@@ -1,0 +1,135 @@
+/* Main popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(90, 87, 87, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+/* Popup container */
+.popup-container {
+  background: #1a1a1a; /* Dark gray for a modern look */
+  border-radius: 15px;
+  padding: 30px;
+  width: 40%;
+  height: 50%;
+  max-width: 100%;
+  max-height: 90vh;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4); /* Deeper shadow for more depth */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease; /* Smooth transition for better effect */
+}
+
+/* Popup header */
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between; /* Space between buttons */
+  margin-top: 15px;
+  
+}
+
+.close-button-text {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  background: transparent;
+  border: none;
+  outline: none;
+
+}
+
+.close-button-img {
+  height: 5vh;
+  width: 5vh;
+  transition: filter 0.3s ease;
+  filter: invert(150%) brightness(90%) contrast(98%); 
+}
+
+.close-button-img:hover {
+  filter: invert(31%) sepia(93%) saturate(7269%) hue-rotate(360deg) brightness(90%) contrast(98%); /* Red */
+}
+  
+.text-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.device-text,
+.description-text {
+  width: 90%;
+  margin-bottom: 12px; /* Optional spacing between text areas */
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: none
+}
+
+
+/* Button section */
+.button-section-text {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 40px;
+}
+
+/* General button styling */
+.button-cancel-text, .button-submit-text {
+  width: 30%;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+/* Cancel button styling */
+.button-cancel-text {
+  background: linear-gradient(145deg, #ff5c5c, #ff3a3a);
+}
+
+.button-cancel-text:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, #ff4040, #ff1e1e);
+  box-shadow: 0px 6px 12px rgba(255, 0, 0, 0.4);
+}
+
+/* Submit button styling */
+.button-submit-text {
+  background: linear-gradient(145deg, #3BADFF, #2a8be1);
+}
+
+.button-submit-text:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, #1f88ff, #176fc1);
+  box-shadow: 0px 6px 12px rgba(0, 128, 255, 0.4);
+}

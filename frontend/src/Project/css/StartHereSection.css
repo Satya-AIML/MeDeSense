@@ -1,0 +1,90 @@
+/* src/components/StartHereSection.css */
+
+.fancy-start {
+    font-size: 2rem; /* Increase the font size */
+    font-weight: bold; /* Make it bold */
+    text-align: center; /* Center the text */
+    color: #fff; /* Set text color to white */
+    padding: 20px 80px; /* Add padding around the text */
+    background: linear-gradient(120deg, #054648, #21888c); /* Gradient background */
+    border-radius: 35px; /* Rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add box shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    cursor: pointer; /* Change cursor on hover */
+    display: inline-block; /* Make it inline and allow padding */
+    }
+
+.fancy-start:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+    }
+
+
+/* Updated button section styling */
+.button_section {
+    margin: 20px 0;                     /* Adjust margin for spacing */
+    display: flex;
+    justify-content: center;             /* Center the buttons */
+    align-items: center;                 /* Center content vertically */
+    gap: 40px;                           /* Increased space between buttons */
+    padding: 5px 0;                     /* Add padding around button area */
+    }
+
+
+/* Updated switch_input styling */
+.switch_input {
+    position: relative;
+    display: flex;                       /* Use flexbox for alignment */
+    align-items: center;                 /* Center content vertically */
+    justify-content: flex-start;         /* Align items to the left */
+    border: none;                        /* Remove the border for cleaner look */
+    text-align: left;                    /* Align text to the left */
+    height: 45px;                        /* Slightly taller height */
+    width: 180px;                        /* Wider width */
+    font-size: 1.2rem;                     /* Adjust font size */
+    font-weight: 500;                    /* Medium font weight */
+    padding: 5px 10px;                  /* Adjust padding */
+    cursor: pointer;
+    background: linear-gradient(90deg, #00c5b5 20%, #0063b4 80%); /* Gradient background */
+    color: #000000;                      /* Text color */
+    border-radius: 12px;                  /* Slightly rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Subtle box shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Smooth transitions */
+    }
+
+.switch_input:hover {
+    transform: translateY(-5px);         /* Lift effect on hover */
+    background: linear-gradient(145deg, #b38f71 30%, #ca6410); /* Darken gradient on hover */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+    }
+
+.switch_input:active {
+    transform: translateY(1px);          /* Pressed effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Reduced shadow on press */
+    }
+
+/* Image styling */
+.switch_input_img {
+    height: 2.5rem;                        /* Adjust height as needed to crop image */
+    width: auto;
+    margin-left: 20px;                         /* Maintain aspect ratio */
+    margin-right: 10px;                 /* Space between image and text */
+    vertical-align: middle;              /* Ensure vertical alignment */
+    }
+
+.switch_input_text {
+    display: inline-block;               /* Ensure proper text alignment */
+    vertical-align: middle;              /* Center text vertically */
+    }
+
+.fade-in {
+    opacity: 0;                             /* Start fully transparent */
+    transform: translateY(-20px);          /* Start slightly above */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+    }
+
+/* Add a class to trigger the animation when shown */
+.button_section.show {
+    opacity: 1;                             /* Fully opaque */
+    transform: translateY(0);               /* Move to original position */
+    }

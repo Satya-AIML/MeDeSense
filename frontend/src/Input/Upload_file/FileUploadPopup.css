@@ -1,0 +1,260 @@
+/* Main popup overlay */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(90, 87, 87, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure the popup is on top */
+}
+
+/* Popup container */
+.popup-container {
+    background: #1a1a1a; /* Dark gray for a modern look */
+    border-radius: 15px;
+    padding: 30px;
+    width: 40%;
+    height: 50%;
+    max-width: 100%;
+    max-height: 90vh;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4); /* Deeper shadow for more depth */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease; /* Smooth transition for better effect */
+}
+
+/* Popup header */
+.popup-header h3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    margin: 0;
+    color: #fff;
+    font-weight: 600;
+}
+
+.close-button-file {
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: transparent;
+    border: none;
+    outline: none;
+  
+  }
+
+.close-button-img {
+    height: 5vh;
+    width: 5vh;
+    transition: filter 0.3s ease;
+    filter: invert(150%) brightness(90%) contrast(98%); 
+}
+  
+.close-button-img:hover {
+    filter: invert(31%) sepia(93%) saturate(7269%) hue-rotate(360deg) brightness(90%) contrast(98%); /* Red */
+}
+
+/* AlertPopup.css */
+.alert-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+  
+.alert-popup-container {
+    background-color: rgba(0, 0, 0, 0.551);
+    padding: 20px;
+    border: 2px solid;
+    border-color: #b30000;
+    border-radius: 8px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+  
+.alert-popup-close-button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+.alert-popup-close-button:hover {
+    background-color: #0056b3;
+}
+
+.custom-alert {
+    background-color: #0000007d; /* Light red background */
+    color: #de0a20;           /* Dark red text */
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+    border: 1px solid #f5c6cb; /* Slightly darker red border */
+    text-align: center;
+    font-size: 14px;
+}
+  
+
+/* Upload section */
+.upload {
+    position: relative;
+    overflow: hidden;
+    width: 70%;
+    max-width: 600px;
+    height: 60%;
+    margin: 0 auto 2px auto;
+    border: 2px dashed #02435b;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #1a1a1a;
+    transition: background-color 0.3s ease;
+}
+
+.upload:hover {
+    background-color: #333333; /* Darken background on hover */
+}
+
+/* Ripple effect */
+.upload::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.55); /* Ripple color */
+    border-radius: 50%;
+    transform: scale(0);
+    transform-origin: center;
+    opacity: 1;
+    transition: transform 0.3s, opacity 0.8s;
+}
+
+.upload:active::after {
+    transform: scale(40); /* Adjust size for ripple spread */
+    opacity: 0;
+}
+
+.upload.dragging {
+    background-color: #81c49acf;
+    border-color: #00cc77;
+  }
+
+
+.upload_icon {
+    height: 60px;
+    width: 60px;
+    margin-top: 10px;
+}
+
+.browse {
+    margin-top: 5px;
+    height: 45px;
+    width: 150px;
+    border-radius: 25px;
+    background-color: #3BADFF;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.browse:hover {
+    background-color: #2454FF; /* Lighter blue on hover */
+}
+
+.Drop-text {
+    margin-top: 10px;
+    font-weight: 500;
+    color: #b3b3b3; /* Light gray for subtle text */
+    font-size: 15px;
+}
+
+.Info-text {
+    margin-top: 10px;
+    color: #b3b3b3;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* File info section */
+.file-info {
+    margin-top: 1px;
+    text-align: center;
+    line-height: 0.5rem;
+    font-size: 0.8rem;
+    color: #ffffff;
+}
+
+/* Button section */
+.button-section-file {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 40px;
+  }
+  
+  /* General button styling */
+  .button-cancel-file, .button-submit-file {
+    width: 30%;
+    padding: 12px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+  }
+  
+  /* Cancel button styling */
+  .button-cancel-file {
+    background: linear-gradient(145deg, #ff5c5c, #ff3a3a);
+  }
+  
+  .button-cancel-file:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(145deg, #ff4040, #ff1e1e);
+    box-shadow: 0px 6px 12px rgba(255, 0, 0, 0.4);
+  }
+  
+  /* Submit button styling */
+  .button-submit-file {
+    background: linear-gradient(145deg, #3BADFF, #2a8be1);
+  }
+  
+  .button-submit-file:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(145deg, #1f88ff, #176fc1);
+    box-shadow: 0px 6px 12px rgba(0, 128, 255, 0.4);
+  }
