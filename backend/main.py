@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from mdc_flask_app.pipeline.prediction import call_api
+from mdc_app.pipeline.predict_details import DetailedPrediction
 
 app = FastAPI()
 
@@ -33,12 +33,20 @@ async def home():
 @app.post("/predict")
 async def predict(request: PredictionRequest):
     # Call the external API asynchronously
-    api_response = await call_api(request)
+    prediction = DetailedPrediction(device_name="Device A", intended_use="For cardiac procedures")
+
+    # Call the API to get prediction data
+    api_response = await prediction.call_api()  # This will call the prediction API
+
+    # Ensure device_class is set before generating a response
+    if prediction.device_class:
+        # Generate a response based on the provided details
+        generated_response = await prediction.generate_response()
     
     return {
         "device": request.device,
         "description": request.description,
-        "api_response": api_response['predicted_class']
+        "api_response": api_response
     }
 
 @app.get("/data")
