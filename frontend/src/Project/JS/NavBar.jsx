@@ -13,7 +13,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="navbar ">
+    <nav className="navbar">
       <button className="nav-button" onClick={() => navigate(-1)}>
         <FaArrowLeft className="nav-icon"/> Back
       </button>

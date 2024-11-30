@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from mdc_app.pipeline.predict_details import DetailedPrediction
@@ -17,7 +17,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,  # Specify allowed origins
     allow_credentials=True,
-    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
+    allow_methods=["*"],  # Allow all HTTP methodsP (GET, POST, etc.)
     allow_headers=["*"],  # Allow all headers
 )
 
@@ -30,18 +30,22 @@ class PredictionRequest(BaseModel):
 async def home():
     return {"message": "Hello from the FastAPI app!"}
 
-@app.post("/predict")
-async def predict(request: PredictionRequest):
-    # Call the external API asynchronously
-    prediction = DetailedPrediction(device_name="Device A", intended_use="For cardiac procedures")
-
-    # Call the API to get prediction data
-    api_response = await prediction.call_api()  # This will call the prediction API
-
-    # Ensure device_class is set before generating a response
+async def generate_response_task(prediction):
+    """Run generate_response in the background."""
     if prediction.device_class:
         # Generate a response based on the provided details
-        generated_response = await prediction.generate_response()
+        await prediction.generate_response()
+
+@app.post("/predict")
+async def predict(request: PredictionRequest, background_tasks: BackgroundTasks):
+    # Call the external API asynchronously
+    prediction = DetailedPrediction(device_name = request.device, intended_use = request.description)
+
+    # Call the API to get prediction data
+    api_response = await prediction.call_api()
+
+    # Add the response generation as a background task
+    background_tasks.add_task(generate_response_task, prediction)
     
     return {
         "device": request.device,

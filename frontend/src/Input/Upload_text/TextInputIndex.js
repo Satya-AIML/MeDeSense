@@ -39,11 +39,12 @@ function TextInputPopup({ onClose, onSubmit, initialDevice = '', initialDescript
         </div>
         <div></div>
         <form className="text-form" onSubmit={handleTextSubmit}>
+          <div className="textarea">
           <textarea 
             className="device-text"
             value={textDeviceInput}
             onChange={handleDeviceTextChange}
-            rows="1"
+            rows="1.2"
             placeholder="Device Name"
             required
           />
@@ -51,10 +52,11 @@ function TextInputPopup({ onClose, onSubmit, initialDevice = '', initialDescript
             className="description-text"
             value={textDescriptionInput}
             onChange={handleDescriptionTextChange}
-            rows="7"
+            rows="10"
             placeholder="Description"
             required
           />
+          </div>
           <div className="button-section-text">
             <button type="button" className="button-cancel-text" onClick={onClose}>Cancel</button>
             <button type="submit" className="button-submit-text">Submit</button>

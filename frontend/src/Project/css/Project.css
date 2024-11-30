@@ -1,16 +1,20 @@
-/* src/components/Project.css */
+/* src/Project/css/Project.css */
 
+/* Background container */
 .background-container {
   background-image: 
     linear-gradient(145deg, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 80%),
     url('../../Image/MDC.webp');
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: 100vh;   /* Change to vh to ensure it scales with the viewport height */
   width: 100%;
-  filter: brightness(0.9);               /* Slightly darkens the image for better text contrast */
-  position: relative;                     /* Required for positioning pseudo-elements */
-  overflow: hidden;                       /* Hide any overflow for pseudo-elements */
+  filter: brightness(0.9);
+  position: relative;
+  overflow: hidden;
+  display: flex;            /* Use flex to handle content positioning */
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Optional: Adding an overlay */
@@ -23,7 +27,7 @@
   bottom: 0;
   background: rgba(255, 255, 255, 0.1);
   pointer-events: none;
-  z-index: 1; /* Ensure it's behind the navbar */
+  z-index: 1;
 }
 
 /* Optional: Adding a subtle texture */
@@ -37,23 +41,90 @@
   background: url('../../Image/45-degree-fabric-dark.png');
   opacity: 0.4;
   pointer-events: none;
-  z-index: 1; /* Ensure it's behind the navbar */
+  z-index: 1;
 }
 
-
+/* All description container */
 .all-description {
-  position: fixed;
-  top: 60px; /* Adjust this based on the height of .fixed-header */
-  left: 0;
-  width: 100%;
-  padding: 0px;
+  position: relative;   /* Change from fixed to relative for better control */
+  top: 60px;
+  width: 90%;           /* Reduce width for better margins on smaller screens */
+  max-width: 100%;    /* Set a max-width to maintain consistency on large screens */
+  padding: 20px;
+  z-index: 2;           /* To ensure it is above the background */
 }
 
+/* Start here section */
 .start-here-section {
   position: relative;
-  width: 100%;
-  padding-top: 5px;
-  margin-top: 430px;
-  height: calc(100vh - 440px);
-  overflow-y: auto;
+  width: 90%;           /* Reduce width for better margins on smaller screens */
+  max-width: 1200px;
+  margin-top: 20px;
+  padding: 20px;
+  height: auto;         /* Set to auto to allow content to scale based on screen size */
+  z-index: 2;           /* To ensure it is above the background */
+}
+
+/* Media Queries for different screen sizes */
+
+/* Medium screen (tablet) */
+@media (max-width: 1024px) {
+  .background-container {
+    background-position: top center;
+    min-height: 80vh; /* Adjust height for smaller screens */
+  }
+  
+  .all-description {
+    top: 40px; /* Adjust spacing for smaller header */
+    padding: 15px;
+  }
+  
+  .start-here-section {
+    margin-top: 15px;
+    padding: 15px;
+  }
+}
+
+/* Small screen (mobile) */
+@media (max-width: 768px) {
+  .background-container {
+    background-size: cover;
+    background-position: top;
+    min-height: 70vh;
+  }
+
+  .all-description {
+    top: 20px;
+    padding: 10px;
+  }
+  
+  .start-here-section {
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .background-container::after {
+    display: none; /* Remove texture on small screens for better readability */
+  }
+
+  .background-container::before {
+    background: rgba(255, 255, 255, 0.05); /* Lower overlay opacity */
+  }
+}
+
+/* Aspect Ratio Adjustments */
+@media (aspect-ratio: 16/10) {
+  .background-container {
+    /* Adjust properties for 16:10 screens */
+    background-position: top center;
+    min-height: 90vh;
+  }
+}
+
+@media (aspect-ratio: 16/9) {
+  .background-container {
+    /* Adjust properties for 16:9 screens */
+    background-position: center;
+    min-height: 100vh;
+  }
 }

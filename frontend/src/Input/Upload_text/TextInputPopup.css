@@ -16,10 +16,10 @@
 .popup-container {
   background: #1a1a1a; /* Dark gray for a modern look */
   border-radius: 15px;
-  padding: 30px;
+  padding: 2rem;
   width: 40%;
-  height: 50%;
-  max-width: 100%;
+  height: 55%;
+  max-width: 90vw;
   max-height: 90vh;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4); /* Deeper shadow for more depth */
   overflow-y: auto;
@@ -36,26 +36,24 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .popup-buttons {
   display: flex;
   justify-content: space-between; /* Space between buttons */
-  margin-top: 15px;
-  
+  margin-top: 1rem;
 }
 
 .close-button-text {
   cursor: pointer;
-  padding: 10px;
+  padding: 0.5rem;
   font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
   background: transparent;
   border: none;
   outline: none;
-
 }
 
 .close-button-img {
@@ -73,20 +71,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
+  height: 100%;
+}
+
+.textarea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .device-text,
 .description-text {
-  width: 90%;
-  margin-bottom: 12px; /* Optional spacing between text areas */
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  top: 0;
+  left: 0;
+  width: 100%;                   /* Width is 90% of the parent */
+  max-width: 500px;             /* Maximum width to control the size */
+  margin-bottom: 0.75rem;       /* Space between text areas */
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 2px solid #23746f; /* Border color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 3px #6db1ff; /* Shadow effect */
+  border-color: color-mix(in hsl, hsl(209, 100%, 50%) 60%, hsl(0, 84%, 42%) 40%);
   font-size: 1rem;
-  resize: none
+  resize: none;
 }
+
+
 
 
 /* Button section */
@@ -94,13 +110,13 @@
   display: flex;
   justify-content: space-between;
   width: 90%;
-  margin-top: 40px;
+  margin-top: 2rem;
 }
 
 /* General button styling */
 .button-cancel-text, .button-submit-text {
   width: 30%;
-  padding: 12px 0;
+  padding: 0.75rem 0;
   font-size: 1.1rem;
   font-weight: bold;
   border-radius: 30px;
@@ -132,4 +148,43 @@
   transform: translateY(-2px);
   background: linear-gradient(145deg, #1f88ff, #176fc1);
   box-shadow: 0px 6px 12px rgba(0, 128, 255, 0.4);
+}
+
+/* Media Queries for different screen sizes */
+
+/* Medium screen (tablet) */
+@media (max-width: 1024px) {
+  .popup-container {
+    width: 60%;
+    height: 60%;
+  }
+}
+
+/* Small screen (mobile) */
+@media (max-width: 768px) {
+  .popup-container {
+    width: 80%;
+    height: 70%;
+    padding: 1.5rem;
+  }
+
+  .button-cancel-text, .button-submit-text {
+    width: 45%;
+  }
+}
+
+/* Aspect Ratio Media Queries */
+
+/* Aspect ratio 16:10 */
+@media (aspect-ratio: 16/10) {
+  .popup-container {
+    height: 60%;
+  }
+}
+
+/* Aspect ratio 16:9 */
+@media (aspect-ratio: 16/9) {
+  .popup-container {
+    height: 55%;
+  }
 }

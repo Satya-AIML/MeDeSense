@@ -1,4 +1,4 @@
-// src/components/ProjectDetails.js
+// src/Project/ProjectDetails.js
 
 import Logo from './JS/Logo';
 import NavBar from './JS/NavBar';
@@ -9,27 +9,28 @@ import './css/About.css';
 
 const ProjectDetails = () => (
   <div><NavBar /> <Logo />
-    <div>
-                 
-    </div>
-    <div>
-      <p className='title-text'>About</p>
-      <p className='project-details'>App Details</p>
-      <p className='project-details-text'>
+  <div>
+  <h1 id='title-text'> About </h1>
+    <div>     
+      <p id='project-details-text'>
       This project focuses on automating the classification, generation, and recommendation of medical devices into distinct classes based on risk level and usage. It utilizes advanced machine learning models fine-tuned for the medical domain.            
       </p>
     </div>
     <div>
-      <ClassCard />
+      <h1 className=''> Device Classes </h1>
+      <div class="line"></div>     
+        <ClassCard />
     </div>
-
-    <div className="container">
-      <div className="left-container">
-        <ProjectModels />
-      </div>
-      <div className="right-container">
-        <StepGuide />
-      </div>
+    <div >
+      <h1 className=''> Project Models </h1>
+      <div class="line"></div> 
+      <ProjectModels />
+    </div>
+    <div >
+      <h1 className=''> Step-by-Step Guide to Using the App </h1>
+      <div class="line"></div> 
+      <StepGuide />
+    </div>
     </div>
 
   </div>

@@ -1,18 +1,21 @@
-/* src/Project/NavBar.css */
+/* src/Project/css/NavBar.css */
+
 .navbar {
   display: flex;
   align-items: center;
-  margin: 15px auto;
-  padding: 10px 10px;
+  padding: 20px 10px;
   color: #ecf0f1;
   font-family: Arial, sans-serif;
   font-size: 1.5rem;
-  position: fixed; 
+  position: fixed;
   top: 0;
-  left: 0;          
-  width: 100%;     
-  z-index: 1000;   
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(8px);          /* Blur effect for the background */
+  -webkit-backdrop-filter: blur(8px);  /* For Safari compatibility */
 }
+
   
 .nav-button {
   display: flex;

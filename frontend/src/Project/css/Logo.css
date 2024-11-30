@@ -7,6 +7,7 @@
     display: flex;
     align-items: center; /* Vertically align logos and the line */
     gap: 9px; /* Reduced by 10% */
+    z-index: 1000;
 }
 
 /* Top-right corner positioning for the first logo */
