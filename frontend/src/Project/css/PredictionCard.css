@@ -14,7 +14,7 @@
 .prediction-card {
     background: #d6d6d6;
     border-radius: 15px;
-    width: auto;
+    width: 100%;
     padding: 10px;
     margin: auto;
     box-shadow: 0 4px 10px rgba(85, 170, 185, 0.2);

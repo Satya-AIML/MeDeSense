@@ -1,21 +1,30 @@
 /* src/Project/css/NavBar.css */
 
 .navbar {
-  display: flex;
-  align-items: center;
-  padding: 20px 10px;
-  color: #ecf0f1;
-  font-family: Arial, sans-serif;
-  font-size: 1.5rem;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  backdrop-filter: blur(8px);          /* Blur effect for the background */
-  -webkit-backdrop-filter: blur(8px);  /* For Safari compatibility */
+  display: flex;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #ecf0f1;
+  font-family: Arial, sans-serif;
+  font-size: 1.6rem;
+  /* No backdrop-filter directly here */
 }
 
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 20px; bottom: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: -1;
+  /* Make sure the pseudo-element has a background so blur is visible */
+}
   
 .nav-button {
   display: flex;
@@ -24,7 +33,7 @@
   border: none;
   color: #ecf0f1;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-right: 20px;
   padding: 8px 12px;
   transition: background 0.3s;

@@ -1,62 +1,126 @@
-/* StepGuide.css */
-.step-guide-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #7b7b7b3a;
-    border-radius: 12px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    color: #2c3e50;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-  
-.title {
-    font-size: 1em;
-    text-align: center;
-    color: #ffffff;
-    margin-bottom: 3px;
-    font-weight: 600;
-  }
-  
-  .step-section, .summary-section {
-    margin-bottom: 5px;
-    padding: 20px;
-    background-color: #ffffffc4;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .section-title {
-    font-size: 1em;
-    margin-bottom: 10px;
-    color: #3498db;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  
-  .section-description {
-    font-size: 1em;
-    line-height: 1.7;
-    color: #4f4f4f;
-    margin-top: 10px;
-    padding: 0 10px;
-  }
-  
-  .bullet-list {
-    padding-left: 20px;
-    list-style: disc;
-    color: #2c3e50;
-  }
-  
-  .bullet-list li {
-    margin: 6px 0;
-  }
-  
-  .work-flowchart-image {
+.step-guide {
     width: 100%;
+    min-height: 100vh;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* Centers content vertically */
+    align-items: center;       /* Centers content horizontally */
+    text-align: center;
+}
+
+.step-guide__line {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right,
+        #0000FF, 
+        #00FFFF, 
+        #FFFF00, 
+        #FF7F00, 
+        #FF0000
+    );
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+/* Top Row */
+.step-guide__top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2px;
+}
+
+.step-guide__left-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-right: 40px;
+    text-align: left; /* Align text to left since this column holds text content */
+}
+
+.step-guide__right-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left; /* Keep text alignment consistent within text areas */
+}
+
+.step-guide__flowchart-image {
+    max-width: 90%;
     height: auto;
-    margin-top: 20px;
     border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-  }
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+}
+
+
+.step-guide__steps {
+    flex: 1;
+    text-align: left;
+}
+
+/* Section Titles and Descriptions */
+.step-guide__section-title {
+    font-size: 1.4rem;
+    color: #61dafb; /* Bright accent color against dark background */
+    margin-bottom: 10px;
+}
+
+.step-guide__description {
+    font-size: 1rem;
+    color: #cfcfcf; /* Slightly lighter gray for paragraphs */
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.step-guide__description strong {
+    color: #ffffff; /* Bright white for emphasis */
+    font-weight: 600;
+}
+
+/* Steps */
+.step-guide__step {
+    margin-bottom: 20px;
+}
+
+.step-guide__step-title {
+    font-size: 1.1rem;
+    color: #adf5e4; /* Soft accent color */
+    margin-bottom: 5px;
+}
+
+.step-guide__step-description {
+    font-size: 1rem;
+    color: #ddd; /* Light gray for steps description */
+    line-height: 1.6;
+}
+
+/* Bullet Lists inside steps */
+.step-guide__bullet-list {
+    list-style-type: disc !important;
+    margin: 5px 2px 0 0;
+    color: #ddd;
+}
+
+.step-guide__bullet-list li {
+    margin: 8px;
+    font-size: 1rem;
+}
+
+.step-guide__bullet-list strong {
+    color: #ffffff; /* Bright white for emphasis */
+    font-weight: 800;
+}
+
+/* Summary Section */
+.step-guide__summary-section {
+    margin-top: 20px;
+}

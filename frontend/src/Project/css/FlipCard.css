@@ -1,10 +1,12 @@
 /* Flip Card Container */
 .flip-card {
-  perspective: 300px; /* Perspective for 3D effect */
-  width: 320px;
-  height: 450px;
-  margin: 10px;
-  border-radius: 15px; 
+  position: relative;      /* Ensure positioning context for inner elements */
+  width: 20vw;             /* Card width scales with viewport width */
+  aspect-ratio: 2 / 3;     /* Maintains a 2:3 ratio dynamically */
+  perspective: 320px;      /* Perspective for 3D effect */
+  margin: 10px auto;       /* Center horizontally if desired */
+  border-radius: 1vw;    /* Rounded corners scale with viewport */
+  box-sizing: border-box;
 }
 
 /* Inner Card that Flips */
@@ -15,7 +17,7 @@
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2);
   border-radius: 15px;
 }
 
@@ -31,12 +33,12 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden; /* Hide the reverse side */
-  border-radius: 15px; /* Rounded corners */
+  border-radius: inherit; /* Rounded corners */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  padding: 20px;
+  padding: 2vw;
   box-sizing: border-box;
 }
 
@@ -45,7 +47,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  background-color: rgba(0, 0, 0, 0.9); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.85); /* Fallback color */
 }
 
 /* Back Side Styling */
@@ -56,7 +58,7 @@
 
 /* Back Text Styling */
 #flip-card-back-details {
-  font-size: 1.5rem;
+  font-size: clamp(0.3rem, 1.5vw, 1.5rem);
   font-weight: 700;
   margin-top: 8px;
   color: #000000;
@@ -68,24 +70,15 @@
 }
 
 #flip-card-title {
-  font-size: 2rem;
+  font-size: clamp(1rem, 2.5vw, 2.5rem);
   font-weight: bold;
-  margin-top: 175px;
-  margin-bottom: 25px;
+  margin-top: clamp(70px, 15vh, 175px); /* Dynamically adjust margin-top */
+  margin-bottom: clamp(10px, 2.5vh, 50px); /* Dynamically adjust margin-bottom */
   color: #ffffff;
 }
 
 #flip-card-subtitle {
-  font-size: 1.2rem;
+  font-size: clamp(0.8rem, 1.2vw, 1.5rem);
   font-weight: normal;
   color: #ffffff;
-}
-
-/* Container for Cards in a Row */
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
 }

@@ -10,7 +10,7 @@ const PredictionCard = () => {
     return (
         <div>
             <div className="prediction-card-container">
-                <h1>Result Page</h1>
+                <h1>Prediction Page</h1>
                 {prediction ? (
                     <div className="prediction-card">
                         <h3 className="card-title">Prediction Result</h3>

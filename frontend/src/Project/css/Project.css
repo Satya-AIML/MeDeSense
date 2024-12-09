@@ -50,7 +50,7 @@
   top: 60px;
   width: 90%;           /* Reduce width for better margins on smaller screens */
   max-width: 100%;    /* Set a max-width to maintain consistency on large screens */
-  padding: 20px;
+  padding: 5px 0 20px 0; /*
   z-index: 2;           /* To ensure it is above the background */
 }
 

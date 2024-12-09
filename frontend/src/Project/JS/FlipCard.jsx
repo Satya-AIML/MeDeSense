@@ -14,7 +14,7 @@ const FlipCard = ({ imageSrc, title, subtitle, classDetails, bgcolor }) => {
       <div className="flip-card-inner">
         <div
           className="flip-card-front"
-          style={{backgroundImage: `url(${imageSrc})`,backgroundPosition: 'center 5rem'}}>
+          style={{backgroundImage: `url(${imageSrc})`, backgroundPosition: 'center 5vw', backgroundSize: '20vw'}}>
           <div id="flip-card-content">
             <h2 id="flip-card-title">{title}</h2>
             <p id="flip-card-subtitle">{subtitle}</p>

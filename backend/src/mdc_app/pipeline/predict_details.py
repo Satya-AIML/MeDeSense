@@ -54,7 +54,7 @@ class DetailedPrediction(Prediction):
             # Send the asynchronous request
             async with httpx.AsyncClient() as client:
                 response = await client.post(url, json=payload, timeout=None)
-            response.raise_for_status()  # Raise exception for non-2xx status codes
+            response.raise_for_status()  # Raise exception for non-200 status codes
         except httpx.HTTPStatusError as e:
             # Handle HTTP errors with a specific exception message
             raise HTTPException(status_code=e.status_code, detail=f"API request failed with status {e.status_code}")

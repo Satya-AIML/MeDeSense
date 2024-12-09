@@ -1,73 +1,25 @@
- .container {
-    display: flex;
-    flex-direction: row;             /* Arrange left and right containers horizontally */
-    justify-content: space-between;  /* Ensure space between left and right containers */
-    align-items: flex-start;         /* Align containers to the top */
-    gap: 10px;                       /* Space between containers */
-    padding: 20px;                   /* Padding around the entire container */
-    margin: 10px auto;                  /* Center the container on the page */
+.scroll-container {
+    scroll-snap-type: y mandatory; /* Enable vertical snapping */
+    overflow-y: scroll; /* Allow vertical scrolling */
+    height: 100vh; /* Full viewport height */
+    scroll-padding-top: 0px; /* Account for fixed navbar height when snapping */
+    margin: 0; /* Remove any margins causing issues */
+    background-color: #121212; /* Dark background */
 }
 
-/* Left container styling */
-.left-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;     /* Align the content to the top */
-    align-items: center;
-    padding-right: 10px;             /* Add padding to the right for spacing */
-}
-
-/* Right container styling */
-.right-container {
-    flex: 1;
+.scroll-section {
+    scroll-snap-align: start; /* Snap to the start of the section */
+    height: 100vh; /* Each section fills the viewport */
+    padding: 2px; /* Add some padding for content */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-left: 10px;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    box-sizing: border-box; /* Include padding in height calculation */
+    scroll-margin-top: 0px; /* Create space above each section for fixed navbar */
 }
 
-/* Flowchart image adjustments */
-.description-container {
-  
-    margin-top: 10px;
-    font-size: 1.1rem;
-    line-height: 1.5;
-    margin: 10px 100px;
+.scroll-section > * {
+    width: 100%; /* Ensure children respect the section width */
 }
 
-/* src/Project/ProjectDetails.css */
-
-#title-text {
-    font-size: 4.5rem;
-    color: #3498db;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 8px;
-    font-family: Arial, sans-serif;
-    letter-spacing: 2px;
-    text-transform: none;
-}
-
-/* Styling for the project details text */
-#project-details-text {
-    font-size: 2rem;               /* Adjust the font size for readability */
-    line-height: 1.5;                /* Increase line spacing for better readability */
-    margin: 10px 100px;
-}
-
-.line {
-    width: 100%;
-    height: 2px; /* Adjust height for line thickness */
-    background: linear-gradient(to right,
-        #0000FF, /* Blue (cooler color) */
-        #00FFFF, /* Cyan */
-        #FFFF00, /* Yellow */
-        #FF7F00, /* Orange */
-        #FF0000  /* Red (warmer color) */
-    );
-    margin-top: 20px; /* Space above the line */
-    margin-bottom: 20px; /* Space below the line */
-}
