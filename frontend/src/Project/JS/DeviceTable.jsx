@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { useDeviceData } from '../../Project/JS/DeviceDataContext';
 import TextInputPopup from '../../Input/Upload_text/TextInputIndex';
-import PredictionButton from '../../Component/PredictionButton'; // Import the new component
+import PredictionButton from '../../Component/PredictionButton';
 import '../css/DeviceTable.css';
 
 const DeviceTable = () => {

@@ -1,4 +1,4 @@
-// src/Project/JS/PredictionButton.jsx
+// src/Component/PredictionButton.jsx
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -8,7 +8,7 @@ const PredictionButton = ({ deviceData }) => {
   const [showSubmit, setShowSubmit] = useState(false);
   const navigate = useNavigate();
 
-  const handleFileSubmitPrediction = async () => {
+  const handleSubmitPrediction = async () => {
     // console.log(`${deviceData.device}`)
     if (deviceData.device.trim() === ""){
         alert("Please enter a device name");
@@ -53,7 +53,7 @@ const PredictionButton = ({ deviceData }) => {
     <div>
       {showSubmit && (
         <>
-          <button className="button-submit-file" onClick={handleFileSubmitPrediction}>
+          <button className="button-submit-file" onClick={handleSubmitPrediction}>
             Submit for Prediction
           </button>
         </>

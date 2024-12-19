@@ -1,23 +1,43 @@
 /* src/Project/css/Result.css */
 
-/* Background container */
+/* Base container styles from your original CSS */
 .result__background-result-container {
     background-image: 
-        linear-gradient(145deg, rgba(0, 0, 0, 1) 28%, rgba(0, 0, 0, 0) 80%),
+        linear-gradient(145deg, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 80%),
         url('../../Image/MDC.webp');
     background-size: cover;
     background-position: center;
-    min-height: 100vh;   /* Change to vh to ensure it scales with the viewport height */
+    min-height: 100vh;
     width: 100%;
     filter: brightness(0.9);
     position: relative;
     overflow: hidden;
-    display: flex;            /* Use flex to handle content positioning */
+    display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background 3s ease;
 }
-  
-/* Optional: Adding an overlay */
+
+/* Gradient States */
+.gradient-state-1 {
+    background-image:
+        linear-gradient(15deg, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 99%),
+        url('../../Image/MDC.webp');
+}
+
+.gradient-state-2 {
+    background-image:
+        linear-gradient(15deg, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0) 99%),
+        url('../../Image/MDC.webp');
+}
+
+.gradient-state-3 {
+    background-image:
+        linear-gradient(15deg, rgba(0,0,0,0.85) 100%, rgba(0,0,0,0) 99%),
+        url('../../Image/MDC.webp');
+}
+
+/* Optional Overlay */
 .result__background-result-container::before {
     content: '';
     position: absolute;
@@ -27,10 +47,10 @@
     bottom: 0;
     background: rgba(255, 255, 255, 0.1);
     pointer-events: none;
-    z-index: 1; /* Ensure it's behind the navbar */
+    z-index: 1; 
 }
 
-/* Optional: Adding a subtle texture */
+/* Optional Texture */
 .result__background-container::after {
     content: '';
     position: absolute;
@@ -42,37 +62,70 @@
     opacity: 0.4;
     pointer-events: none;
     z-index: 1;
-  }
+}
 
 .result__scroll-container {
-    scroll-snap-type: y mandatory; /* Enable vertical snapping */
-    overflow-y: scroll; /* Allow vertical scrolling */
-    height: 100vh; /* Full viewport height */
-    scroll-padding-top: 10px; /* Account for fixed navbar height when snapping */
-    margin: 0; /* Remove any margins causing issues */
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    scroll-padding-top: 5px;
+    margin: 0;
 }
 
 .result__scroll-section {
-    scroll-snap-align: start; /* Snap to the start of the section */
-    height: 100vh; /* Each section fills the viewport */
+    scroll-snap-align: start;
+    height: 100vh;
     width: 100vw;
-    padding: 2px; /* Add some padding for content */
+    padding: 2px;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    box-sizing: border-box; /* Include padding in height calculation */
-    scroll-margin-top: 40px; /* Create space above each section for fixed navbar */
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    scroll-margin-top: 40px;
+    color: #fff;
 }
 
 .result__scroll-section:last-child {
     margin: 0;
-    scroll-margin-top: 0; /* If you need to reset this as well */
+    scroll-margin-top: 0;
 }
 
-
 .result__scroll-section > * {
-    width: 100%; /* Ensure children respect the section width */
+    width: 100%;
     height: 50vh;
 }
 
+/* @keyframes subtleGradientAnimation {
+    0% {
+      background-image: 
+        linear-gradient(145deg, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 80%), 
+        url('../../Image/MDC.webp');
+    }
+    50% {
+      background-image: 
+        linear-gradient(160deg, rgba(0,0,0,0.9) 50%, rgba(0,0,0,0) 99%), 
+        url('../../Image/MDC.webp');
+    }
+    100% {
+      background-image:
+        linear-gradient(175deg, rgba(0,0,0,0.85) 100%, rgba(0,0,0,0) 99%), 
+        url('../../Image/MDC.webp');
+    }
+  }
+  
+  .result__background-result-container {
+
+      min-height: 100vh;
+      width: 100%;
+      filter: brightness(0.9);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+
+      animation: subtleGradientAnimation 5s ease-in-out infinite alternate;
+  } */
+  

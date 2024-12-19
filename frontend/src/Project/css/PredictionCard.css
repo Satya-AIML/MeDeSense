@@ -8,13 +8,14 @@
 
 .prediction-card-container {
     text-align: center;
+    width: auto;
     margin-top: 20px;
 }
 
 .prediction-card {
     background: #d6d6d6;
     border-radius: 15px;
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin: auto;
     box-shadow: 0 4px 10px rgba(85, 170, 185, 0.2);

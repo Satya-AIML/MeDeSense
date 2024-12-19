@@ -1,9 +1,11 @@
-// src/Project/Result.jsx
+// src/Project/JS/PredictionCard.jsx
+
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import RecommendationButton from '../../Component/RecommendationButton';
 import '../css/PredictionCard.css';
 
-const PredictionCard = () => {
+const PredictionCard = ({ onRecommendClick }) => {
     const location = useLocation();
     const { prediction, device, description } = location.state || {};
 
@@ -24,6 +26,8 @@ const PredictionCard = () => {
                     <p>No prediction available.</p>
                 )}
             </div>
+            {/* Add recommendation button here */}
+            <RecommendationButton onClick={onRecommendClick} />
         </div>
     );
 }
